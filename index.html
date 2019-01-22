@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | EBME 460</title>
+    <title>EBME 460 | Spin Visualizer</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>  
@@ -16,11 +16,12 @@
     <script src="js/npo.src.js"></script>
     <link rel="stylesheet" href="css/file_uploader.css">
     <!--  -->
-
   </head>
   <body>
+
     <div class="webgl-content">
       <div id="gameContainer" style="width: 960px; height: 600px"></div>
+
 
       <!-- WebGLFileUploader -->
       <!-- <div id="file_uploader"></div> -->
@@ -28,9 +29,49 @@
       <!--  -->
 
       <div class="footer">
-        <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">EBME 460</div>
+        <h1> EBME 460: Spin Visualization Tool for MRI</h1>  
+      </div>
+        
+      <div> 
+        <br>
+        <h2> Data File Formatting Guide:</h2>
+        <body>
+            <br>
+            <h3>Header Formatting</h3>
+            <br>
+            Data should be stored in a .txt file. <br>
+            The first line of the .txt file should be a string identifying the name of your sequence.<br>
+            The second line of the .txt file should be the timestep used for your simulation. (in milliseconds)<br>
+            Your simulation data should begin on the third line.<br>
+            <br>
+            <h3>Data Formatting</h3>
+            <br>
+            The data section of the .txt file is occupied by chunks of data representing the change in magnetization vectors over time for various spins. 
+            Demarkate the beginning of a specific spin's data with the break character "|" on a new line. After this break character, each line in the text file should be occupied with a single Vector3 indicating the state of the current vector at a specific timepoint. Vectors should occupy the range from 0 to 1 and should be encoded as floating points with 6 decimals of precision in the following format, including parenthesis:<br>
+            <di style="text-align:center">(x.xxxxxx, y.yyyyyy, z.zzzzzz)</div>
+            <br>
+            <h3>Sample Data File</h3>
+            The following is a sample data file with three spins that don't change over time. Each points along a different axis.<br>
+            <br>
+            SampleData<br>
+            0.010000<br>
+            |<br>
+            (1.000000,0.000000,0.000000)<br>
+            (1.000000,0.000000,0.000000)<br>
+            (1.000000,0.000000,0.000000)<br>
+            |<br>
+            (0.000000,1.000000,1.000000)<br>
+            (0.000000,1.000000,1.000000)<br>
+            (0.000000,1.000000,1.000000)<br>
+            |<br>
+            (0.000000,0.000000,1.000000)<br>
+            (0.000000,0.000000,1.000000)<br>
+            (0.000000,0.000000,1.000000)<br>
+            <br><br><br>
+       <div style="text-align: center"> Copyright 2019. CWRU EBE 460. Contact apd47@case.edu for usage help or information. </div>
+      <br><br>
+        </body>
       </div>
     </div>
   </body>
