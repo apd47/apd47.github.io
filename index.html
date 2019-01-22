@@ -19,24 +19,15 @@
   </head>
   <body>
 
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 960px; height: 600px"></div>
-
-
-      <!-- WebGLFileUploader -->
-      <!-- <div id="file_uploader"></div> -->
-      <!-- <div id="file_uploader_file_list"></div> -->
-      <!--  -->
-
-      <div class="footer">
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <h1> EBME 460: Spin Visualization Tool for MRI</h1>  
-      </div>
-        
-      <div> 
-        <br>
-        <h2> Data File Formatting Guide:</h2>
-        <body>
+      <div class="webgl-content">
+          <div id="gameContainer" style="width: 960px; height: 600px"></div>
+          <div class="footer">
+            <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+          </div>
+          <div id="instructions">             
+            <h1> EBME 460: Spin Visualization Tool for MRI</h1>  
+            <br>
+            <h2> Data File Formatting Guide:</h2>
             <br>
             <h3>Header Formatting</h3>
             <br>
@@ -69,10 +60,9 @@
             (0.000000,0.000000,1.000000)<br>
             (0.000000,0.000000,1.000000)<br>
             <br><br><br>
-       <div style="text-align: center"> Copyright 2019. CWRU EBE 460. Contact apd47@case.edu for usage help or information. </div>
-      <br><br>
-        </body>
-      </div>
-    </div>
+          </div>
+          <div style="text-align: center"> Copyright 2019. CWRU EBE 460. Contact apd47@case.edu for usage help or information. </div>
+          <br><br>
+      </div> 
   </body>
 </html>
